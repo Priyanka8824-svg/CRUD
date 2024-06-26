@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<h1 class="text-center text-purple">Login Form</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <b>Username:</b><input type="text" name="unm">
+    <br><br>
+    <b>Password:</b><input type="password" name="pwd">
+    <br><br>
+
+    <input type="submit" value="Submit" class="btn btn-success">
+    <input type="reset" value="Reset" class="btn btn-warning">
+
+</form>
+</div>
+{% endblock %}

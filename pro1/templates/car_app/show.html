@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Show</title>
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center text-primary">Car Record</h1>
+
+<table class="table table-warning table-striped">
+    <thead>
+    <tr>
+        <td>Car ID</td>
+        <td>Car Company</td>
+        <td>Car Color</td>
+        <td>Seater</td>
+    </tr>
+    </thead>
+
+    <tbody>
+        {% for car in obj %}
+        <tr>
+            <td>{{car.cid}}</td>
+            <td>{{car.car_company}}</td>
+            <td>{{car.color}}</td>
+            <td>{{car.seater}}</td>
+
+        <td>
+
+            <a href="/a1/uv/{{car.cid}}/"><button class="btn btn-success">Update</button></a>
+            <a href="/a1/dv/{{car.cid}}/"><button class="btn btn-warning">Delete</button></a>
+
+        </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
